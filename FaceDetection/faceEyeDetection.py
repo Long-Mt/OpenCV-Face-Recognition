@@ -28,6 +28,7 @@ while True:
         minSize=(30, 30)
     )
 
+
     for (x,y,w,h) in faces:
         cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
         roi_gray = gray[y:y+h, x:x+w]
@@ -43,8 +44,8 @@ while True:
         for (ex, ey, ew, eh) in eyes:
             cv2.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (0, 255, 0), 2)
                
-        cv2.imshow('video', img)
-
+    cv2.imshow('video', img)
+	
     k = cv2.waitKey(30) & 0xff
     if k == 27: # press 'ESC' to quit
         break
